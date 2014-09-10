@@ -1,5 +1,16 @@
 package org.docsapss.mobapps.systemdashboard;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.StatusLine;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -22,7 +33,7 @@ public class DashboardActivity extends Activity{
 
     public void getSystems(View view) {
     	// Send a request to retrieve all the systems information from the V2 API
-        Intent intent = DashboardService.makeIntent(this, Uri.parse("system-dashboard.herokuapp.com/api/v2/systems"), activityHandler);
+        Intent intent = DashboardService.makeIntent(this, Uri.parse("http://system-dashboard.herokuapp.com/api/v2/systems"), activityHandler);
         startService(intent);
     }
 	

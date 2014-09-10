@@ -72,10 +72,10 @@ public class DashboardService extends Service{
 		// Main code here
 		private void sendRequestToWebAPI(Intent intent) throws ClientProtocolException, IOException {
 			String jsonMessage=null;
-			//String restfulRoute=intent.getData().toString();
+			String restfulRoute=intent.getData().toString();
 			
 		    HttpClient httpclient = new DefaultHttpClient();
-		    HttpGet httpGet=new HttpGet("system-dashboard.herokuapp.com/api/v2/systems");
+		    HttpGet httpGet=new HttpGet(restfulRoute);
 		    httpGet.addHeader("Authorization","Token token=a7cf047390a68d72b7fc4f2162093f63");
 		    httpGet.addHeader("Accept","application/json");
 		    HttpResponse response = httpclient.execute(httpGet);
