@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SystemDashboard</string>
+    <string name="login_title">Welcome to the System Dashboard</string>
+    <string name="login_msg">Please enter your 4-digit pin</string>
+    <string name="login_header">Log In</string>
+</resources>

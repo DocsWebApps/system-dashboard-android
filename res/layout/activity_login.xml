@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/server_room"
+    android:scaleType="centerCrop"
+    tools:context=".LoginActivity" >
+    
+    <TextView
+        android:id="@+id/login_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#AAAAAA"
+        android:text="@string/login_header"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <EditText
+        android:id="@+id/pin2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/pin1"
+        android:layout_alignBottom="@+id/pin1"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/pin1"
+        android:background="@drawable/white_rounded_corner"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="numberPassword"
+        android:maxLength="1" />
+
+    <EditText
+        android:id="@+id/pin3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/pin2"
+        android:layout_alignBottom="@+id/pin2"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/pin2"
+        android:background="@drawable/white_rounded_corner"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="numberPassword"
+        android:maxLength="1" />
+
+    <EditText
+        android:id="@+id/pin4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/pin3"
+        android:layout_alignBottom="@+id/pin3"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/pin3"
+        android:background="@drawable/white_rounded_corner"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="numberPassword"
+        android:maxLength="1" />
+
+    <EditText
+        android:id="@+id/pin1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/login_msg"
+        android:layout_marginLeft="35dp"
+        android:background="@drawable/white_rounded_corner"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="numberPassword"
+        android:maxLength="1" >
+    	<requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/login_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/pin1"
+        android:layout_alignRight="@+id/pin4"
+        android:layout_below="@+id/login_header"
+        android:layout_marginTop="29dp"
+        android:background="@drawable/grey_rounded_corner"
+        android:gravity="center"
+        android:text="@string/login_title"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/login_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/pin1"
+        android:layout_alignRight="@+id/pin4"
+        android:layout_below="@+id/login_title"
+        android:layout_marginBottom="18dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/grey_rounded_corner"
+        android:gravity="center_horizontal"
+        android:text="@string/login_msg"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+</RelativeLayout>
