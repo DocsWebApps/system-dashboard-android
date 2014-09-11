@@ -31,8 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="DashboardService"
-                 android:process=":my_process"/>
     </application>
 
 </manifest>
