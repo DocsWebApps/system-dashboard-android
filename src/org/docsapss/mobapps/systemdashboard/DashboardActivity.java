@@ -1,24 +1,17 @@
 package org.docsapss.mobapps.systemdashboard;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.StatusLine;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-
+import java.lang.ref.WeakReference;
 import android.app.Activity;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
 
 public class DashboardActivity extends Activity{
 	
-	private static TextView textView;;
+	private TextView textView=null;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -26,48 +19,43 @@ public class DashboardActivity extends Activity{
 		textView=(TextView) findViewById(R.id.textView1);
 	}
 	
+	// Triggered by button on display
 	public void getSystems(View view) {
-		new WebService().execute("http://192.168.56.102:3000/api/v2/systems");					// railsdev
-		//new WebService().execute("http://system-dashboard.herokuapp.com/api/v2/systems");		// Heroku
+		RestWebServiceHandler handler = new RestWebServiceHandler(this);
+		Intent intent=RestWebService.makeIntent(this, handler, restURL());
+		startService(intent);
 	}
 	
-	static class WebService extends AsyncTask<String, String, String> {
-		@Override
-		protected String doInBackground(String... url) {
-			String jsonMessage=null;
-			try {
-				jsonMessage = getDataFromAPI(url);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return jsonMessage;
-		}
-		
-		private String getDataFromAPI(String[] url) throws IOException {
-			String jsonMessage=null;
-			HttpClient httpclient = new DefaultHttpClient();
-		    HttpGet httpGet=new HttpGet(url[0]);
-		    httpGet.addHeader("Authorization","Token token=1f57183b411b402523893b7717c6e8d1"); 		// railsdev
-		    //httpGet.addHeader("Authorization","Token token=a7cf047390a68d72b7fc4f2162093f63");	// Heroku	
-		    httpGet.addHeader("Accept","application/json");
-		    HttpResponse response = httpclient.execute(httpGet);
-		    StatusLine statusLine = response.getStatusLine();
-		    if(statusLine.getStatusCode() == HttpStatus.SC_OK){
-		        ByteArrayOutputStream out = new ByteArrayOutputStream();
-		        response.getEntity().writeTo(out);
-		        out.close();
-		        jsonMessage = out.toString();
-		    } else {
-		        response.getEntity().getContent().close();
-		        throw new IOException(statusLine.getReasonPhrase());
-		    }
-			return jsonMessage;
-			//return "{\"systems\":[{\"name\":\"kirk\",\"status\":\"green\"},{\"name\":\"spock\",\"status\":\"amber\"},{\"name\":\"bones\",\"status\":\"red\"}]}";
-		    }
-		
-		@Override
-		protected void onPostExecute(String json) {
-			textView.setText(json);
-		}
+	// Return the restful URL as a String
+	private String restURL() {
+		//return "http://localhost:3000/api/v2/systems";					// Railsdev
+		return "http://system-dashboard.herokuapp.com/api/v2/systems";		// Heroku
 	}
+	
+	/**
+	 * @class RestWebServiceHandler
+	 * @brief Uses a weak reference to the outer class and used to handle responses from the RestWebService.
+	 */
+	static class RestWebServiceHandler extends Handler {
+    	WeakReference<DashboardActivity> outerClass;
+
+    	// Set up weak reference to outer class
+    	public RestWebServiceHandler(DashboardActivity outer) {
+            outerClass = new WeakReference<DashboardActivity>(outer);
+    	}
+    	
+    	// Handle any messages that get sent to this Handler
+    	@Override
+		public void handleMessage(Message msg) {
+            final DashboardActivity activity = outerClass.get();
+    		
+            if (activity != null) {
+    			Bundle bundle=msg.getData();
+    			activity.textView.setText((String) bundle.getString(RestWebService.JSON_KEY));
+            }
+    	}
+    }
+	/**
+	 * End of RestWebServiceHandler Class
+	 */
 }

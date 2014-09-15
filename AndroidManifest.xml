@@ -23,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
             android:name="org.docsapss.mobapps.systemdashboard.DashboardActivity"
             android:label="@string/app_name" >
@@ -31,6 +32,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+                
+        <service android:name="org.docsapss.mobapps.systemdashboard.RestWebService"
+                 android:process=":my_process"/>
     </application>
 
 </manifest>
