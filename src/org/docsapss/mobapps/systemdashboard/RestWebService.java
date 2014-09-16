@@ -20,7 +20,7 @@ import android.os.Messenger;
 import android.os.RemoteException;
 
 /**
- * @class DownloadIntentService
+ * @class RestWebService
  *
  * @brief This class extends the IntentService, which provides a
  *        framework that simplifies programming and processing Android
@@ -94,40 +94,43 @@ public class RestWebService extends IntentService {
      */
     @Override
 	protected void onHandleIntent (Intent intent) {
-    	String json=null;
+    	String jsonMessage=null;
     	try {
-			json=getDataFromAPI(intent.getStringExtra(RestWebService.RESTURL_KEY));
+			jsonMessage=getRequestToAPI(intent.getStringExtra(RestWebService.RESTURL_KEY));
 		} catch (IOException e) {e.printStackTrace();}
-    	
-        Message msg = Message.obtain();
-        Bundle data = new Bundle();
-        data.putString(JSON_KEY, json);
-        msg.setData(data);
         
         try {
-        	((Messenger) intent.getExtras().get(RestWebService.MESSENGER_KEY)).send(msg);
+        	((Messenger) intent.getExtras().get(RestWebService.MESSENGER_KEY)).send(setReturnMessage(jsonMessage));
         } catch (RemoteException e) {e.printStackTrace();}
     }
     
-	private String getDataFromAPI(String url) throws IOException {
-		String jsonMessage=null;
-		HttpClient httpclient = new DefaultHttpClient();
-	    HttpGet httpGet=new HttpGet(url);
-	    httpGet.addHeader("Authorization", returnToken());
-	    httpGet.addHeader("Accept",returnContentType());
-	    HttpResponse response = httpclient.execute(httpGet);
-	    StatusLine statusLine = response.getStatusLine();
-	    if(statusLine.getStatusCode() == HttpStatus.SC_OK){
-	        ByteArrayOutputStream out = new ByteArrayOutputStream();
-	        response.getEntity().writeTo(out);
-	        out.close();
-	        jsonMessage = out.toString();
-	    } else {
-	        response.getEntity().getContent().close();
-	        throw new IOException(statusLine.getReasonPhrase());
-	    }
-		return jsonMessage;
-		//return "{\"systems\":[{\"name\":\"kirk\",\"status\":\"green\"},{\"name\":\"spock\",\"status\":\"amber\"},{\"name\":\"bones\",\"status\":\"red\"}]}";
+    private Message setReturnMessage(String jsonMessage) {
+        Message msg = Message.obtain();
+        Bundle data = new Bundle();
+        data.putString(JSON_KEY, jsonMessage);
+        msg.setData(data);
+        return msg;
+    }
+    
+	private String getRequestToAPI(String url) throws IOException {
+		//String jsonMessage=null;
+		//HttpClient httpclient = new DefaultHttpClient();
+	    //HttpGet httpGet=new HttpGet(url);
+	    //httpGet.addHeader("Authorization", returnToken());
+	    //httpGet.addHeader("Accept",returnContentType());
+	    //HttpResponse response = httpclient.execute(httpGet);
+	    //StatusLine statusLine = response.getStatusLine();
+	    //if(statusLine.getStatusCode() == HttpStatus.SC_OK){
+	    //    ByteArrayOutputStream out = new ByteArrayOutputStream();
+	    //    response.getEntity().writeTo(out);
+	    //    out.close();
+	    //    jsonMessage = out.toString();
+	    //} else {
+	    //    response.getEntity().getContent().close();
+	    //    throw new IOException(statusLine.getReasonPhrase());
+		//}
+		//return jsonMessage;
+		return "{\"systems\":[{\"name\":\"kirk\",\"status\":\"green\"},{\"name\":\"spock\",\"status\":\"amber\"},{\"name\":\"bones\",\"status\":\"red\"}]}";
 	}
 	
 	private String returnContentType() {

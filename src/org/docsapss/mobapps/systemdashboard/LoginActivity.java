@@ -11,6 +11,10 @@ import android.view.View.OnFocusChangeListener;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * @class LoginActivity
+ * @brief Handles the initial login activity
+ */
 public class LoginActivity extends Activity {
 	
 	private static final String myPin="3391";
@@ -63,7 +67,7 @@ public class LoginActivity extends Activity {
 	}
 	
 	private void launchDashboardListActivity() {
-		Intent dashboardIntent=new Intent(loginView, DashboardActivity.class);
+		Intent dashboardIntent=new Intent(loginView, SystemActivity.class);
 		startActivity(dashboardIntent);
 		finish();
 	}
