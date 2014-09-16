@@ -113,24 +113,23 @@ public class RestWebService extends IntentService {
     }
     
 	private String getRequestToAPI(String url) throws IOException {
-		//String jsonMessage=null;
-		//HttpClient httpclient = new DefaultHttpClient();
-	    //HttpGet httpGet=new HttpGet(url);
-	    //httpGet.addHeader("Authorization", returnToken());
-	    //httpGet.addHeader("Accept",returnContentType());
-	    //HttpResponse response = httpclient.execute(httpGet);
-	    //StatusLine statusLine = response.getStatusLine();
-	    //if(statusLine.getStatusCode() == HttpStatus.SC_OK){
-	    //    ByteArrayOutputStream out = new ByteArrayOutputStream();
-	    //    response.getEntity().writeTo(out);
-	    //    out.close();
-	    //    jsonMessage = out.toString();
-	    //} else {
-	    //    response.getEntity().getContent().close();
-	    //    throw new IOException(statusLine.getReasonPhrase());
-		//}
-		//return jsonMessage;
-		return "{\"systems\":[{\"name\":\"kirk\",\"status\":\"green\"},{\"name\":\"spock\",\"status\":\"amber\"},{\"name\":\"bones\",\"status\":\"red\"}]}";
+		String jsonMessage=null;
+		HttpClient httpclient = new DefaultHttpClient();
+		HttpGet httpGet=new HttpGet(url);
+	    httpGet.addHeader("Authorization", returnToken());
+	    httpGet.addHeader("Accept",returnContentType());
+	    HttpResponse response = httpclient.execute(httpGet);
+	    StatusLine statusLine = response.getStatusLine();
+	    if(statusLine.getStatusCode() == HttpStatus.SC_OK){
+	        ByteArrayOutputStream out = new ByteArrayOutputStream();
+	        response.getEntity().writeTo(out);
+	        out.close();
+	        jsonMessage = out.toString();
+	    } else {
+	        response.getEntity().getContent().close();
+	        throw new IOException(statusLine.getReasonPhrase());
+		}
+		return jsonMessage;
 	}
 	
 	private String returnContentType() {

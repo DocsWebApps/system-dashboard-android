@@ -5,4 +5,5 @@
     <string name="login_msg">Please enter your 4-digit pin</string>
     <string name="login_header">Log In</string>
     <string name="smiley">Smiley Status</string>
+    <string name="footer_message">Refresh Data</string>
 </resources>

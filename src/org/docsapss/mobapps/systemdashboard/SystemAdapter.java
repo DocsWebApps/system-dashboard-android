@@ -3,6 +3,10 @@ package org.docsapss.mobapps.systemdashboard;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -41,20 +45,26 @@ public class SystemAdapter extends BaseAdapter{
 	
 	public SystemAdapter(Context context) {
 		mContext = context;
-		DatabaseHelper dbHelper=new DatabaseHelper();
-		database = dbHelper.getWritableDatabase();
-		//getRecords();
-		testRecords();
+		//DatabaseHelper dbHelper=new DatabaseHelper();
+		//database = dbHelper.getWritableDatabase();
 	}
 	
-	private void testRecords() {
+	public void parseJsonString(String jsonMessage) throws JSONException {
+		JSONObject jObject = new JSONObject(jsonMessage);
+		JSONArray jArray = jObject.getJSONArray(SystemRecord.TABLE_NAME);
 		recordList.clear();
-		recordList.add(new SystemRecord("1", "iGMS", "green", null));
-		recordList.add(new SystemRecord("2", "DNCS", "red", null));
-		recordList.add(new SystemRecord("3", "BM", "green", null));
-		recordList.add(new SystemRecord("4", "iEMS", "amber", null));
-		recordList.add(new SystemRecord("5", "CNI Data Center", "green", null));
-		recordList.add(new SystemRecord("6", "CNI Networks", "green", null));
+		
+		for (int i=0; i < jArray.length(); i++)
+		{
+		    try {
+		        JSONObject oneObject = jArray.getJSONObject(i);
+		        //String id = oneObject.getString(SystemRecord.ID);
+		        String name = oneObject.getString("name");
+		        String status = oneObject.getString("status");
+		        //String last_incident_date = oneObject.getString(SystemRecord.LAST_INCIDENT_DATE);
+		        recordList.add(new SystemRecord(null, name, status, null));
+		    } catch (JSONException e) {}
+		}
 	}
 	
 	private void getRecords() {
