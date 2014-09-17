@@ -53,7 +53,7 @@ public class LoginActivity extends Activity {
 			public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
 				if (pinCode4.getText().toString().length()<1) return;
 				if (myPin.equals(enteredPin(pinCode1, pinCode2, pinCode3, pinCode4))) {
-					launchDashboardListActivity();
+					launchSystemListActivity();
 					finish();
 				} else {
 					resetLoginActivity(pinCode1, pinCode2, pinCode3, pinCode4);
@@ -66,8 +66,8 @@ public class LoginActivity extends Activity {
 		return pin1.getText().toString()+pin2.getText().toString()+pin3.getText().toString()+pin4.getText().toString();
 	}
 	
-	private void launchDashboardListActivity() {
-		Intent dashboardIntent=new Intent(loginView, SystemActivity.class);
+	private void launchSystemListActivity() {
+		Intent dashboardIntent=new Intent(loginView, SystemListActivity.class);
 		startActivity(dashboardIntent);
 		finish();
 	}

@@ -69,6 +69,8 @@ public class RestWebService extends IntentService {
      * 
      * The returned intent is a Command in the Command Processor Pattern. The intent contains a
      * messenger, which plays the role of Proxy in the Active ObjectPattern.
+     * 
+     * Returns an intent that can start this Service.
      */
     public static Intent makeIntent(Context context, Handler handler, String url) {
     	Messenger messenger = new Messenger(handler);
@@ -91,19 +93,25 @@ public class RestWebService extends IntentService {
      * strategy are implemented. For example, IntentService handles
      * the creation and lifecycle of a started service, but allows a
      * user to define what happens when an Intent is actually handled.
+     * 
+     * This method is triggered when the startService() method is called on the caller.
      */
     @Override
 	protected void onHandleIntent (Intent intent) {
     	String jsonMessage=null;
     	try {
+    		// Call the remote API with a restful GET request and assign the response to jsonMessage.
 			jsonMessage=getRequestToAPI(intent.getStringExtra(RestWebService.RESTURL_KEY));
 		} catch (IOException e) {e.printStackTrace();}
-        
+		//jsonMessage="{\"systems\":[{\"name\":\"kirk\",\"status\":\"green\"},{\"name\":\"spock\",\"status\":\"amber\"},{\"name\":\"bones\",\"status\":\"red\"}]}";
+    	
         try {
+        	// Return the Message object with the JSON response back to the caller.
         	((Messenger) intent.getExtras().get(RestWebService.MESSENGER_KEY)).send(setReturnMessage(jsonMessage));
         } catch (RemoteException e) {e.printStackTrace();}
     }
     
+    // Create a Message object containing the JSON response.
     private Message setReturnMessage(String jsonMessage) {
         Message msg = Message.obtain();
         Bundle data = new Bundle();
@@ -112,6 +120,7 @@ public class RestWebService extends IntentService {
         return msg;
     }
     
+    // Does all the hard work in calling the remote API and returning the JSON response.
 	private String getRequestToAPI(String url) throws IOException {
 		String jsonMessage=null;
 		HttpClient httpclient = new DefaultHttpClient();

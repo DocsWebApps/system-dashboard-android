@@ -19,7 +19,7 @@ import android.widget.TextView;
  * @class SystemActivity
  * @brief Displays a list view and systems and their statuses and any messages.
  */
-public class SystemActivity extends ListActivity {
+public class SystemListActivity extends ListActivity {
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -32,13 +32,14 @@ public class SystemActivity extends ListActivity {
 		footerView.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				refreshData();
+				fetchDataFromWebService();
 			}
 		});
-		refreshData();
+		fetchDataFromWebService();
 	}
 	
-	private void refreshData() {
+	// Fetch data from the external Web Service via an API
+	private void fetchDataFromWebService() {
 		RestWebServiceHandler handler = new RestWebServiceHandler(this);
 		Intent intent=RestWebService.makeIntent(this, handler, restURL());
 		startService(intent);
@@ -50,10 +51,10 @@ public class SystemActivity extends ListActivity {
 		return "http://system-dashboard.herokuapp.com/api/v2/systems";		// Heroku
 	}
 	
-	// Launch the SystemActivity
-	private void launchSystemActivity(Message msg) throws JSONException {
+	// Launch the SystemListActivity
+	private void launchSystemListActivity(Message msg) throws JSONException {
 		Bundle bundle=msg.getData();
-		SystemAdapter mAdapter = new SystemAdapter(getApplicationContext());
+		SystemListAdapter mAdapter = new SystemListAdapter(getApplicationContext());
 		mAdapter.parseJsonString((String) bundle.getString(RestWebService.JSON_KEY));
 		getListView().setAdapter(mAdapter);
 	}
@@ -63,20 +64,20 @@ public class SystemActivity extends ListActivity {
 	 * @brief Uses a weak reference to the outer class and used to handle responses from the RestWebService.
 	 */
 	static class RestWebServiceHandler extends Handler {
-    	WeakReference<SystemActivity> outerClass;
+    	WeakReference<SystemListActivity> outerClass;
 
     	// Set up weak reference to outer class
-    	public RestWebServiceHandler(SystemActivity outer) {
-            outerClass = new WeakReference<SystemActivity>(outer);
+    	public RestWebServiceHandler(SystemListActivity outer) {
+            outerClass = new WeakReference<SystemListActivity>(outer);
     	}
     	
     	// Handle any messages that get sent to this Handler
     	@Override
 		public void handleMessage(Message msg) {
-            final SystemActivity activity = outerClass.get();
+            final SystemListActivity activity = outerClass.get();
             if (activity != null) {
             	try {
-					activity.launchSystemActivity(msg);
+					activity.launchSystemListActivity(msg);
 				} catch (JSONException e) {e.printStackTrace();}
             }
     	}
