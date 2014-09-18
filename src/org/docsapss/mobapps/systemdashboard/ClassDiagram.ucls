@@ -11,17 +11,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="org.docsapss.mobapps.systemdashboard.LoginActivity" project="SystemDashboard" 
-    file="/SystemDashboard/src/org/docsapss/mobapps/systemdashboard/LoginActivity.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="223" width="299" x="-34" y="9"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="org.docsapss.mobapps.systemdashboard.SystemListActivity.RestWebServiceHandler" 
+  <class id="2" language="java" name="org.docsapss.mobapps.systemdashboard.SystemListActivity.RestWebServiceHandler" 
     project="SystemDashboard" file="/SystemDashboard/src/org/docsapss/mobapps/systemdashboard/SystemListActivity.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="467" y="318"/>    
@@ -31,7 +21,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="org.docsapss.mobapps.systemdashboard.SystemListActivity" project="SystemDashboard" 
+  <class id="3" language="java" name="org.docsapss.mobapps.systemdashboard.SystemListActivity" project="SystemDashboard" 
     file="/SystemDashboard/src/org/docsapss/mobapps/systemdashboard/SystemListActivity.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="467" y="82"/>    
@@ -41,7 +31,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="org.docsapss.mobapps.systemdashboard.SystemListAdapter" project="SystemDashboard" 
+  <class id="4" language="java" name="org.docsapss.mobapps.systemdashboard.SystemListAdapter" project="SystemDashboard" 
     file="/SystemDashboard/src/org/docsapss/mobapps/systemdashboard/SystemListAdapter.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="766" y="100"/>    
@@ -51,7 +41,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="org.docsapss.mobapps.systemdashboard.SystemListRecord" project="SystemDashboard" 
+  <class id="5" language="java" name="org.docsapss.mobapps.systemdashboard.SystemListRecord" project="SystemDashboard" 
     file="/SystemDashboard/src/org/docsapss/mobapps/systemdashboard/SystemListRecord.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="768" y="388"/>    
@@ -61,18 +51,28 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="7">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="8" name="recordList"/>      
-      <multiplicity id="9" minimum="0" maximum="2147483647"/>    
+  <class id="6" language="java" name="org.docsapss.mobapps.systemdashboard.LoginActivity" project="SystemDashboard" 
+    file="/SystemDashboard/src/org/docsapss/mobapps/systemdashboard/LoginActivity.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="223" width="299" x="-30" y="32"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <nesting id="7">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="2"/>  
+  </nesting>  
+  <association id="8">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="9" name="recordList"/>      
+      <multiplicity id="10" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <nesting id="10">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="3"/>  
-  </nesting>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

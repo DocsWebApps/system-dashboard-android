@@ -99,11 +99,11 @@ public class RestWebService extends IntentService {
     @Override
 	protected void onHandleIntent (Intent intent) {
     	String jsonMessage=null;
-    	try {
-    		// Call the remote API with a restful GET request and assign the response to jsonMessage.
-			jsonMessage=getRequestToAPI(intent.getStringExtra(RestWebService.RESTURL_KEY));
-		} catch (IOException e) {e.printStackTrace();}
-		//jsonMessage="{\"systems\":[{\"name\":\"kirk\",\"status\":\"green\"},{\"name\":\"spock\",\"status\":\"amber\"},{\"name\":\"bones\",\"status\":\"red\"}]}";
+    	//try {
+    	//	// Call the remote API with a restful GET request and assign the response to jsonMessage.
+		//	jsonMessage=getRequestToAPI(intent.getStringExtra(RestWebService.RESTURL_KEY));
+		//} catch (IOException e) {e.printStackTrace();}
+		jsonMessage="{\"systems\":[{\"name\":\"kirk\",\"status\":\"green\"},{\"name\":\"spock\",\"status\":\"amber\"},{\"name\":\"bones\",\"status\":\"red\"}]}";
     	
         try {
         	// Return the Message object with the JSON response back to the caller.
