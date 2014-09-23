@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#DDDDDD"
+    android:scaleType="centerCrop"
+    tools:context=".PinCheckActivity" >
+    
+    <TextView
+        android:id="@+id/first_time_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="28dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/grey_rounded_corner"
+        android:text="@string/first_time_message"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
+    <TextView
+        android:id="@+id/new_pin_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_below="@+id/first_time_msg"
+        android:layout_marginTop="28dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/grey_rounded_corner"
+        android:text="@string/new_pin_message"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
+    <TextView
+        android:id="@+id/remmember_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_below="@+id/new_pin_msg"
+        android:textStyle="italic"
+        android:layout_marginTop="28dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/grey_rounded_corner"
+        android:text="@string/remmember_message"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/new_pin_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/new_pin_entry"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp"
+        android:text="@string/add_new_pin_save" />
+
+    <EditText
+        android:id="@+id/new_pin_entry"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/remmember_msg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
+
+
+    
+</RelativeLayout>

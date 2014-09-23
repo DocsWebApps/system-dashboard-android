@@ -17,12 +17,16 @@ import android.widget.Toast;
  */
 public class LoginActivity extends Activity {
 	
-	private static final String myPin="3391";
+	private  String myPin=null;
 	final Context loginView=this;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		Intent intent=getIntent();
+		myPin=intent.getStringExtra(PinCheckActivity.PIN_CODE);
+		
 		setContentView(R.layout.activity_login);
 		
 		final EditText pinCode1=(EditText) findViewById(R.id.pin1);

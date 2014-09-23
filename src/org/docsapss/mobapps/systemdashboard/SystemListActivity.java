@@ -48,7 +48,7 @@ public class SystemListActivity extends ListActivity {
 	// Return the restful URL as a String
 	private String restURL() {
 		//return "http://localhost:3000/api/v2/systems";					// Railsdev
-		return "http://system-dashboard.herokuapp.com/api/v2/systems";		// Heroku
+		return "http://awayday-feedback.herokuapp.com/api/v2/systems";		// Heroku
 	}
 	
 	// Launch the SystemListActivity

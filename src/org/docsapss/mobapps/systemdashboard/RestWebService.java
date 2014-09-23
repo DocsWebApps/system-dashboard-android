@@ -99,11 +99,11 @@ public class RestWebService extends IntentService {
     @Override
 	protected void onHandleIntent (Intent intent) {
     	String jsonMessage=null;
-    	//try {
-    	//	// Call the remote API with a restful GET request and assign the response to jsonMessage.
-		//	jsonMessage=getRequestToAPI(intent.getStringExtra(RestWebService.RESTURL_KEY));
-		//} catch (IOException e) {e.printStackTrace();}
-		jsonMessage="{\"systems\":[{\"name\":\"kirk\",\"status\":\"green\"},{\"name\":\"spock\",\"status\":\"amber\"},{\"name\":\"bones\",\"status\":\"red\"}]}";
+    	try {
+    		// Call the remote API with a restful GET request and assign the response to jsonMessage.
+			jsonMessage=getRequestToAPI(intent.getStringExtra(RestWebService.RESTURL_KEY));
+		} catch (IOException e) {e.printStackTrace();}
+		//jsonMessage="{\"systems\":[{\"name\":\"kirk\",\"status\":\"green\"},{\"name\":\"spock\",\"status\":\"amber\"},{\"name\":\"bones\",\"status\":\"red\"}]}";
     	
         try {
         	// Return the Message object with the JSON response back to the caller.
@@ -147,6 +147,6 @@ public class RestWebService extends IntentService {
 	
 	private String returnToken() {
 	    //return "Token token=1f57183b411b402523893b7717c6e8d1"; 		// Railsdev
-	    return "Token token=a7cf047390a68d72b7fc4f2162093f63";			// Heroku	
+	    return "Token token=92b1a8339d73d6cc1ef8aecee1c288d7";			// Heroku	
 	}
 }
