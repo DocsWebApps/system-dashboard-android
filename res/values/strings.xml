@@ -6,8 +6,12 @@
     <string name="login_header">Log In</string>
     <string name="smiley">System Status</string>
     <string name="footer_message">Refresh Data</string>
-    <string name="new_pin_message">Please enter your 4 digit pin and press save!</string>
+    <string name="new_pin_message">Please enter your 4 digit pin and press save</string>
     <string name="add_new_pin_save">Save</string>
-    <string name="first_time_message">First time usage detected!</string>
+    <string name="first_time_message">Pin code is invalid or not set !</string>
     <string name="remmember_message">Please remmember your PIN !!</string>
+    <string name="nointernet_warning">Cannot connect to the Internet !</string>
+    <string name="nointernet_message">The SystemDashboard requires a 3G or Wi-Fi connection to the Internet in order to operate</string>
+    <string name="nointernet_button">Exit</string>
+    <string name="nointernet_image">NoInternet Image</string>
 </resources>

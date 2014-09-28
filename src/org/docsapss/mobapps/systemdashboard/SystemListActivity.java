@@ -38,20 +38,16 @@ public class SystemListActivity extends ListActivity {
 		fetchDataFromWebService();
 	}
 	
-	// Fetch data from the external Web Service via an API
 	private void fetchDataFromWebService() {
 		RestWebServiceHandler handler = new RestWebServiceHandler(this);
 		Intent intent=RestWebService.makeIntent(this, handler, restURL());
 		startService(intent);
 	}
-	
-	// Return the restful URL as a String
+
 	private String restURL() {
-		//return "http://localhost:3000/api/v2/systems";					// Railsdev
-		return "http://awayday-feedback.herokuapp.com/api/v2/systems";		// Heroku
+		return "http://awayday-feedback.herokuapp.com/api/v2/systems";
 	}
 	
-	// Launch the SystemListActivity
 	private void launchSystemListActivity(Message msg) throws JSONException {
 		Bundle bundle=msg.getData();
 		SystemListAdapter mAdapter = new SystemListAdapter(getApplicationContext());
@@ -66,12 +62,10 @@ public class SystemListActivity extends ListActivity {
 	static class RestWebServiceHandler extends Handler {
     	WeakReference<SystemListActivity> outerClass;
 
-    	// Set up weak reference to outer class
     	public RestWebServiceHandler(SystemListActivity outer) {
             outerClass = new WeakReference<SystemListActivity>(outer);
     	}
-    	
-    	// Handle any messages that get sent to this Handler
+
     	@Override
 		public void handleMessage(Message msg) {
             final SystemListActivity activity = outerClass.get();
@@ -82,7 +76,4 @@ public class SystemListActivity extends ListActivity {
             }
     	}
     }
-	/**
-	 * End of RestWebServiceHandler Class
-	 */
 }

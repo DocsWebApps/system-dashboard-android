@@ -15,32 +15,39 @@ public final class R {
         public static final int green=0x7f020001;
         public static final int grey_rounded_corner=0x7f020002;
         public static final int ic_launcher=0x7f020003;
-        public static final int red=0x7f020004;
-        public static final int white_rounded_corner=0x7f020005;
+        public static final int nointernet=0x7f020004;
+        public static final int red=0x7f020005;
+        public static final int white_rounded_corner=0x7f020006;
     }
     public static final class id {
-        public static final int first_time_msg=0x7f060007;
-        public static final int footerView=0x7f06000c;
-        public static final int login_header=0x7f060000;
-        public static final int login_msg=0x7f060002;
-        public static final int login_title=0x7f060001;
-        public static final int new_pin_entry=0x7f06000b;
-        public static final int new_pin_msg=0x7f060008;
-        public static final int new_pin_save=0x7f06000a;
-        public static final int pin1=0x7f060003;
-        public static final int pin2=0x7f060004;
-        public static final int pin3=0x7f060005;
-        public static final int pin4=0x7f060006;
-        public static final int remmember_msg=0x7f060009;
-        public static final int system_image=0x7f06000e;
-        public static final int system_name=0x7f06000f;
-        public static final int system_view=0x7f06000d;
+        public static final int container=0x7f060008;
+        public static final int first_time_msg=0x7f06000c;
+        public static final int footerView=0x7f060000;
+        public static final int login_header=0x7f060001;
+        public static final int login_msg=0x7f060003;
+        public static final int login_title=0x7f060002;
+        public static final int new_pin_entry=0x7f060010;
+        public static final int new_pin_msg=0x7f06000d;
+        public static final int new_pin_save=0x7f06000f;
+        public static final int nointernet_button=0x7f06000b;
+        public static final int nointernet_message=0x7f06000a;
+        public static final int nointernet_warning=0x7f060009;
+        public static final int pin1=0x7f060004;
+        public static final int pin2=0x7f060005;
+        public static final int pin3=0x7f060006;
+        public static final int pin4=0x7f060007;
+        public static final int remmember_msg=0x7f06000e;
+        public static final int system_image=0x7f060012;
+        public static final int system_name=0x7f060013;
+        public static final int system_view=0x7f060011;
     }
     public static final class layout {
-        public static final int activity_login=0x7f030000;
-        public static final int activity_pinentry=0x7f030001;
-        public static final int footer_view=0x7f030002;
-        public static final int system_view=0x7f030003;
+        public static final int footer_view=0x7f030000;
+        public static final int login_view=0x7f030001;
+        public static final int main_view=0x7f030002;
+        public static final int nointernetconnection_view=0x7f030003;
+        public static final int pinentry_view=0x7f030004;
+        public static final int system_view=0x7f030005;
     }
     public static final class string {
         public static final int add_new_pin_save=0x7f040007;
@@ -51,6 +58,10 @@ public final class R {
         public static final int login_msg=0x7f040002;
         public static final int login_title=0x7f040001;
         public static final int new_pin_message=0x7f040006;
+        public static final int nointernet_button=0x7f04000c;
+        public static final int nointernet_image=0x7f04000d;
+        public static final int nointernet_message=0x7f04000b;
+        public static final int nointernet_warning=0x7f04000a;
         public static final int remmember_message=0x7f040009;
         public static final int smiley=0x7f040004;
     }

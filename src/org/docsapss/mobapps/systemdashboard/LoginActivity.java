@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 /**
  * @class LoginActivity
- * @brief Handles the initial login activity
+ * @brief Handles the login process
  */
 public class LoginActivity extends Activity {
 	
@@ -23,11 +23,8 @@ public class LoginActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		Intent intent=getIntent();
-		myPin=intent.getStringExtra(PinCheckActivity.PIN_CODE);
-		
-		setContentView(R.layout.activity_login);
+		setContentView(R.layout.login_view);
+		myPin=PinCode.getPinCode(this);
 		
 		final EditText pinCode1=(EditText) findViewById(R.id.pin1);
 		final EditText pinCode2=(EditText) findViewById(R.id.pin2);
