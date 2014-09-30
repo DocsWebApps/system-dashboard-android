@@ -4,16 +4,19 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-public class NetworkUtilities {
+/**
+ * @class NetworkUtils
+ * @brief Checks for various levels of connectivity to either 3G / Wi-Fi networks or indeed the Internet
+ */
+public class NetworkUtils {
 	private Context context=null;
 	
-	public NetworkUtilities(Context context) {
+	public NetworkUtils(Context context) {
 		this.context=context;
 	}
 	
 	public static boolean noConnection(Context context) {
-		NetworkUtilities networkUtility=new NetworkUtilities(context);
-		return !(networkUtility.isNetworkAvailable());
+		return !(new NetworkUtils(context).isNetworkAvailable());
 	}
 	
 	private boolean isNetworkAvailable() {

@@ -10,7 +10,12 @@ import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 
-public class EncryptionDecryption {
+
+/**
+ * @class EncryptionDecryptionUtils
+ * @brief Provides encryption / decryption tools to the application
+ */
+public class EncryptionDecryptionUtils {
 	
 	@SuppressLint("TrulyRandom")
 	public static SecretKey getSecretKey() throws NoSuchAlgorithmException {
@@ -40,7 +45,7 @@ public class EncryptionDecryption {
         byte[] encodedBytes = null;
         try {
             Cipher c = Cipher.getInstance("AES");
-            c.init(Cipher.ENCRYPT_MODE, EncryptionDecryption.getSecretKey());
+            c.init(Cipher.ENCRYPT_MODE, EncryptionDecryptionUtils.getSecretKey());
             encodedBytes = c.doFinal(decryptedString.getBytes());
         } catch (Exception e) {}
         String encryptedString=Base64.encodeToString(encodedBytes, Base64.DEFAULT);

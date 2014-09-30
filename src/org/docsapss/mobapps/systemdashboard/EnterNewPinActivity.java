@@ -27,7 +27,7 @@ public class EnterNewPinActivity extends Activity {
 			public void onClick(View v) {
 				TextView newPinEntry=(TextView) findViewById(R.id.new_pin_entry);
 				String pinCode=newPinEntry.getText().toString().trim();
-				if (PinCode.writePinToFile(context, pinCode)) {
+				if (PinCodeUtils.writePinToFile(context, pinCode)) {
 					Intent loginIntent=new Intent(context, LoginActivity.class);
 					startActivity(loginIntent);
 					finish();

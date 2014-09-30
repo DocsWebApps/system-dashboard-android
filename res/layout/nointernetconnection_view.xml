@@ -9,12 +9,12 @@
     
     <TextView
         android:id="@+id/nointernet_warning"
-        android:layout_width="250sp"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="28sp"
         android:textStyle="bold"
-        android:textSize="22sp"
+        android:textSize="32sp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/grey_rounded_corner"
         android:text="@string/nointernet_warning"
@@ -26,17 +26,17 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_below="@+id/nointernet_warning"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="28sp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/grey_rounded_corner"
         android:text="@string/nointernet_message"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textAppearance="?android:attr/textAppearanceSmall" />
     
     <ImageView 
         android:layout_below="@+id/nointernet_message"
         android:layout_width="250sp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="28sp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:src="@drawable/nointernet"
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="41sp"
         android:text="@string/nointernet_button" />
 </RelativeLayout>
 

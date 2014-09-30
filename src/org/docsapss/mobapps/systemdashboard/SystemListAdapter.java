@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 /**
  * @class SystemAdapter
- * @brief Handles parsing returned JSON responses, and building the Recordset behind SystemListActivity.
+ * @brief Handles parsing returned JSON responses, and building the Recordset behind SystemListActivity
  */
 public class SystemListAdapter extends BaseAdapter{
 

@@ -3,7 +3,7 @@
     android:id="@+id/system_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7777"
+    android:background="#FFFFFF"
     android:padding="3dp" >
 
     <ImageView
@@ -20,6 +20,6 @@
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_weight="0.42"
-        android:textColor="#FFF"
+        android:textColor="#000000"
         android:textSize="24sp" />
 </LinearLayout>

@@ -24,7 +24,7 @@ public class LoginActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_view);
-		myPin=PinCode.getPinCode(this);
+		myPin=PinCodeUtils.getPinCode(this);
 		
 		final EditText pinCode1=(EditText) findViewById(R.id.pin1);
 		final EditText pinCode2=(EditText) findViewById(R.id.pin2);

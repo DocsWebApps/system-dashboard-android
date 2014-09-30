@@ -2,7 +2,7 @@ package org.docsapss.mobapps.systemdashboard;
 
 /**
  * @class SystemRecord
- * @brief Handles the records for the SystemListActivity.
+ * @brief Handles the records for the SystemListActivity
  */
 public class SystemListRecord {
 	public final static String TABLE_NAME="systems";

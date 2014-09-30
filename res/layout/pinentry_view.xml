@@ -9,12 +9,12 @@
     
     <TextView
         android:id="@+id/first_time_msg"
-        android:layout_width="wrap_content"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="28sp"
         android:textStyle="bold"
-        android:textSize="22sp"
+        android:textSize="32sp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/grey_rounded_corner"
         android:text="@string/first_time_message"
@@ -22,15 +22,15 @@
     
     <TextView
         android:id="@+id/new_pin_msg"
-        android:layout_width="wrap_content"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_below="@+id/first_time_msg"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="28sp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/grey_rounded_corner"
         android:text="@string/new_pin_message"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textAppearance="?android:attr/textAppearanceSmall" />
     
     <TextView
@@ -41,11 +41,11 @@
         android:textColor="#FF0000"
         android:layout_below="@+id/new_pin_msg"
         android:textStyle="italic"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="28sp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/grey_rounded_corner"
         android:text="@string/remmember_message"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <Button
@@ -54,16 +54,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="40sp"
         android:text="@string/add_new_pin_save" />
 
     <EditText
         android:id="@+id/new_pin_entry"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
+        android:layout_width="60sp"
+        android:layout_height="30sp"
+        android:gravity="center"
         android:layout_below="@+id/remmember_msg"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="30sp"
         android:background="#FFFFFF"
         android:ems="10"
         android:inputType="number" >

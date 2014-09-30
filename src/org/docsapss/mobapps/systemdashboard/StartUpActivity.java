@@ -4,6 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+/**
+ * @class StartUpActivity
+ * @brief Handles the various startup checks and, if all is well, then hands over to the login process 
+ */
 public class StartUpActivity extends Activity {
 	Intent intent=null;
 	
@@ -11,10 +15,10 @@ public class StartUpActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_view);
 		
-		if (NetworkUtilities.noConnection(this)) {
+		if (NetworkUtils.noConnection(this)) {
 			intent=new Intent(this, NetworkAvailabilityActivity.class);
 			startActivity(intent);
-		} else if  (PinCode.pinIsNotValid(this)) {
+		} else if (PinCodeUtils.pinIsNotValid(this)) {
 			intent=new Intent(this, EnterNewPinActivity.class);
 			startActivity(intent);
 			this.finish();
