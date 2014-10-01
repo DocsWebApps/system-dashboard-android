@@ -108,7 +108,7 @@ public class RestWebService extends IntentService {
     	}
     	
     	//try {
-		//	Thread.sleep(10000);
+		//	Thread.sleep(5000);
 		//} catch (InterruptedException e1) {}
 		//jsonMessage="{\"systems\":[{\"name\":\"kirk\",\"status\":\"green\"},{\"name\":\"spock\",\"status\":\"amber\"},{\"name\":\"bones\",\"status\":\"red\"}]}";
     	

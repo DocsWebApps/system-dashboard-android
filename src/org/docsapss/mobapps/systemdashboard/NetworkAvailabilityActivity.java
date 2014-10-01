@@ -11,6 +11,7 @@ import android.widget.Button;
  * @brief Displays the screen indicating there is no network connection and allows the user to exit
  */
 public class NetworkAvailabilityActivity extends Activity {
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

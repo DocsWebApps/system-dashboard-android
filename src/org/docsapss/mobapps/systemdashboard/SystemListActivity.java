@@ -41,12 +41,26 @@ public class SystemListActivity extends ListActivity {
 		});
 		fetchDataFromWebService();
 	}
+
+	@Override
+	public void onBackPressed() {
+	    new AlertDialog.Builder(this)
+	    	.setMessage("Are you sure you want to exit?")
+	    	.setCancelable(false)
+	    	.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+	    		public void onClick(DialogInterface dialog, int id) {
+	    			SystemListActivity.this.finish();
+	    		}
+	    	})
+	    	.setNegativeButton("No", null)
+	    	.show();
+	}
 	
 	private void fetchDataFromWebService() {
 		RestWebServiceHandler handler = new RestWebServiceHandler(this);
 		Intent intent=RestWebService.makeIntent(this, handler, restURL());
 		startService(intent);
-		showDialog();
+		showProgressDialog();
 	}
 
 	private String restURL() {
@@ -63,31 +77,30 @@ public class SystemListActivity extends ListActivity {
 		Bundle bundle=msg.getData();
 		String jsonResponse=(String) bundle.getString(RestWebService.JSON_KEY);
 		if (jsonResponse.equals("NoData")) {
-			noDataFound();
+			onNoDataFound();
 		} else {
 			launchSystemListActivity(jsonResponse);
 		}
 	}
 	
-	@SuppressWarnings("deprecation")
-	private void noDataFound() {
-		AlertDialog alertDialog=new AlertDialog.Builder(this).create();
-		alertDialog.setTitle("No Data Found");
-		alertDialog.setMessage("No data has been retrieved from the external web service for an unknown reason. Please make sure you have an active Internet connection when using this application.");
-		alertDialog.setButton("Exit Application", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface arg0, int arg1) {
-				finish();
-			}
-		});
-		alertDialog.show();
+	private void onNoDataFound() {
+	    new AlertDialog.Builder(this) 
+	    	.setTitle("No Data Found !")
+	    	.setMessage("No data has been retrieved from the external web service for an unknown reason. Please make sure you have an active Internet connection when using this application.")
+	    	.setCancelable(false)
+	    	.setNeutralButton("Close Application", new DialogInterface.OnClickListener() {
+    		public void onClick(DialogInterface dialog, int id) {
+    			SystemListActivity.this.finish();
+    		}
+    	})
+    	.show();
 	}
 	
-    private void showDialog() {
+    private void showProgressDialog() {
         mProgressDialog=ProgressDialog.show(this,"Contacting Dashboard Webservice:", "Retrieving data from external Web Service...");
     }
     
-    private void dismissDialog() {
+    private void dismissProcessDialog() {
         if (mProgressDialog != null)
             mProgressDialog.dismiss();
     }
@@ -108,7 +121,7 @@ public class SystemListActivity extends ListActivity {
             final SystemListActivity activity = outerClass.get();
             if (activity != null) {
             	try {
-            		activity.dismissDialog();
+            		activity.dismissProcessDialog();
 					activity.processWebServiceResponse(msg);
 				} catch (JSONException e) {e.printStackTrace();}
             }

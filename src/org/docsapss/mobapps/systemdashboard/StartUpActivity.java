@@ -11,6 +11,7 @@ import android.os.Bundle;
 public class StartUpActivity extends Activity {
 	Intent intent=null;
 	
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_view);
@@ -21,7 +22,6 @@ public class StartUpActivity extends Activity {
 		} else if (PinCodeUtils.pinIsNotValid(this)) {
 			intent=new Intent(this, EnterNewPinActivity.class);
 			startActivity(intent);
-			this.finish();
 		} else {
 			Intent loginIntent=new Intent(this, LoginActivity.class);
 			startActivity(loginIntent);
