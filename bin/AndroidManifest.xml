@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.docsapss.mobapps.systemdashboard"
+    package="org.docsapps.mobapps.systemdashboard"
     android:versionCode="1"
     android:versionName="1.0" >
     
@@ -18,7 +18,7 @@
         android:theme="@style/AppTheme" >
         
         <activity
-            android:name="org.docsapss.mobapps.systemdashboard.StartUpActivity"
+            android:name="org.docsapps.mobapps.systemdashboard.StartUpActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +27,7 @@
         </activity>
         
         <activity
-            android:name="org.docsapss.mobapps.systemdashboard.NetworkAvailabilityActivity"
+            android:name="org.docsapps.mobapps.systemdashboard.NetworkAvailabilityActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.NO_INTERNET" />
@@ -36,7 +36,7 @@
         </activity>
         
         <activity
-            android:name="org.docsapss.mobapps.systemdashboard.EnterNewPinActivity"
+            android:name="org.docsapps.mobapps.systemdashboard.EnterNewPinActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.ENTER_PIN" />
@@ -45,7 +45,7 @@
         </activity>
         
         <activity
-            android:name="org.docsapss.mobapps.systemdashboard.LoginActivity"
+            android:name="org.docsapps.mobapps.systemdashboard.LoginActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.LOGIN" />
@@ -54,7 +54,7 @@
         </activity>
         
         <activity
-            android:name="org.docsapss.mobapps.systemdashboard.SystemListActivity"
+            android:name="org.docsapps.mobapps.systemdashboard.SystemListActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.SYSTEM_LIST" />
@@ -62,7 +62,7 @@
             </intent-filter>
         </activity>
                 
-        <service android:name="org.docsapss.mobapps.systemdashboard.RestWebService"
+        <service android:name="org.docsapps.mobapps.systemdashboard.RestWebService"
                  android:process=":my_process"/>
     </application>
 </manifest>
