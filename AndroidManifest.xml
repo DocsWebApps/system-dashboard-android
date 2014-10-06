@@ -43,6 +43,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+ 
+         <activity
+            android:name="org.docsapps.mobapps.systemdashboard.AppSettingsActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.ENTER_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         
         <activity
             android:name="org.docsapps.mobapps.systemdashboard.LoginActivity"

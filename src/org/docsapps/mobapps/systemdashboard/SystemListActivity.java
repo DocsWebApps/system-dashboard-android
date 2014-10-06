@@ -58,13 +58,17 @@ public class SystemListActivity extends ListActivity {
 	
 	private void fetchDataFromWebService() {
 		RestWebServiceHandler handler = new RestWebServiceHandler(this);
-		Intent intent=RestWebService.makeIntent(this, handler, restURL());
+		Intent intent=RestWebService.makeIntent(this, handler, restURL(), returnToken());
 		startService(intent);
 		showProgressDialog();
 	}
-
+	
+	private String returnToken() {
+		return "Token token="+StorageUtils.readFirstLineFromFile(this, AppSettingsActivity.TOKEN_FILE);
+	}
+	
 	private String restURL() {
-		return "http://awayday-feedback.herokuapp.com/api/v2/systems";
+		return StorageUtils.readFirstLineFromFile(this, AppSettingsActivity.WEB_SERVICE_FILE)+"/api/v2/systems";
 	}
 	
 	private void launchSystemListActivity(String jsonResponse) throws JSONException {

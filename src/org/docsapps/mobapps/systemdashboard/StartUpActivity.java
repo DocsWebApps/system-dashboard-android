@@ -25,7 +25,7 @@ public class StartUpActivity extends Activity {
 		} else {
 			Intent loginIntent=new Intent(this, LoginActivity.class);
 			startActivity(loginIntent);
-		}
+		} 
 		this.finish(); 
 	}
 }

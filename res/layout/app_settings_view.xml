@@ -5,51 +5,45 @@
     android:layout_gravity="center"
     android:background="#DDDDDD"
     android:scaleType="centerCrop"
-    tools:context=".PinCheckActivity" >
+    tools:context=".AppSettingsActivity" >
     
     <TextView
-        android:id="@+id/first_time_msg"
+        android:id="@+id/app_set_message"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="28sp"
         android:textStyle="bold"
-        android:textSize="32sp"
+        android:textSize="22sp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/grey_rounded_corner"
-        android:text="@string/first_time_message"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:text="@string/app_set_message"/>
     
     <TextView
-        android:id="@+id/new_pin_msg"
+        android:id="@+id/app_set_url"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_below="@+id/first_time_msg"
+        android:layout_below="@+id/app_set_message"
         android:layout_marginTop="28sp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/grey_rounded_corner"
-        android:text="@string/new_pin_message"
-        android:textSize="20sp"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:text="@string/app_set_url"
+        android:textSize="20sp" />
     
     <TextView
-        android:id="@+id/remmember_msg"
-        android:layout_width="wrap_content"
+        android:id="@+id/app_set_token"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textColor="#FF0000"
-        android:layout_below="@+id/new_pin_msg"
+        android:layout_below="@+id/new_url_entry"
         android:textStyle="italic"
         android:layout_marginTop="28sp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/grey_rounded_corner"
-        android:text="@string/remmember_message"
-        android:textSize="20sp"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:text="@string/app_set_token"
+        android:textSize="20sp" />
 
     <Button
-        android:id="@+id/new_pin_save"
+        android:id="@+id/app_set_save"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -58,17 +52,32 @@
         android:text="@string/button_save_message" />
 
     <EditText
-        android:id="@+id/new_pin_entry"
-        android:layout_width="60sp"
+        android:id="@+id/new_url_entry"
+        android:layout_width="300sp"
         android:layout_height="30sp"
+        android:hint="@string/app_url_hint"
+        android:inputType="textWebEmailAddress"
         android:gravity="center"
-        android:layout_below="@+id/remmember_msg"
+        android:layout_below="@+id/app_set_url"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30sp"
         android:background="#FFFFFF"
-        android:ems="10"
-        android:inputType="number" >
+        android:ems="10" >
 
         <requestFocus />
+    </EditText>
+    
+    <EditText
+        android:id="@+id/new_token_entry"
+        android:layout_width="300sp"
+        android:layout_height="30sp"
+        android:inputType="text"
+        android:gravity="center"
+        android:hint="@string/app_token_hint"
+        android:layout_below="@+id/app_set_token"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30sp"
+        android:background="#FFFFFF"
+        android:ems="10" >
     </EditText>
 </RelativeLayout>

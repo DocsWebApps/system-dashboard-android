@@ -7,11 +7,16 @@
     <string name="smiley">System Status</string>
     <string name="footer_message">Refresh Data</string>
     <string name="new_pin_message">Please enter your 4 digit pin and press save</string>
-    <string name="add_new_pin_save">Save</string>
+    <string name="button_save_message">Save</string>
     <string name="first_time_message">Pin code is invalid or not set !</string>
     <string name="remmember_message">Please remmember your PIN !!</string>
     <string name="nointernet_warning">Cannot connect to the Internet !</string>
     <string name="nointernet_message">The SystemDashboard requires a 3G or Wi-Fi connection to the Internet in order to operate</string>
-    <string name="nointernet_button">Exit</string>
+    <string name="button_exit_message">Exit</string>
     <string name="nointernet_image">NoInternet Image</string>
+    <string name="app_set_message">Required application settings</string>
+    <string name="app_set_url">1. Please enter the url of the dashboard webservice below</string>
+    <string name="app_set_token">2. Please enter the 32 character authentication token below</string>
+    <string name="app_url_hint">eg. http://yourhostname.com</string>
+    <string name="app_token_hint">eg. fA63be20aBB...</string>
 </resources>

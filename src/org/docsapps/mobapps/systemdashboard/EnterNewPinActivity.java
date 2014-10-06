@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 /**
@@ -25,11 +25,11 @@ public class EnterNewPinActivity extends Activity {
 		butNewPinSave.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				TextView newPinEntry=(TextView) findViewById(R.id.new_pin_entry);
+				EditText newPinEntry=(EditText) findViewById(R.id.new_pin_entry);
 				String pinCode=newPinEntry.getText().toString().trim();
 				if (PinCodeUtils.writePinToFile(context, pinCode)) {
-					Intent loginIntent=new Intent(context, LoginActivity.class);
-					startActivity(loginIntent);
+					Intent settingsIntent=new Intent(context, AppSettingsActivity.class);
+					startActivity(settingsIntent);
 					finish();
 				} else {
 					Toast.makeText(context,"Pin is invalid, please re-enter a 4 digit pin only.", Toast.LENGTH_LONG).show();

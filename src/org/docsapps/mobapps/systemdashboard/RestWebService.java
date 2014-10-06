@@ -41,6 +41,7 @@ public class RestWebService extends IntentService {
 	public static final String MESSENGER_KEY = "MESSENGER";
 	public static final String RESTURL_KEY = "RESTURL";
 	public static final String JSON_KEY = "JSON";
+	public static final String TOKEN_KEY = "TOKEN";
 	
     /**
      * The default constructor for this service. Simply forwards
@@ -72,11 +73,12 @@ public class RestWebService extends IntentService {
      * 
      * Returns an intent that can start this Service.
      */
-    public static Intent makeIntent(Context context, Handler handler, String url) {
+    public static Intent makeIntent(Context context, Handler handler, String url, String token) {
     	Messenger messenger = new Messenger(handler);
     	Intent intent = new Intent(context, RestWebService.class);
     	intent.putExtra(MESSENGER_KEY, messenger);
     	intent.putExtra(RESTURL_KEY, url);
+    	intent.putExtra(TOKEN_KEY, token);
         return intent;
     }
 
@@ -101,7 +103,7 @@ public class RestWebService extends IntentService {
     	String jsonMessage=null;
     	try {
     		// Call the remote API with a restful GET request and assign the response to jsonMessage.
-			jsonMessage=getRequestToAPI(intent.getStringExtra(RestWebService.RESTURL_KEY));
+			jsonMessage=getRequestToAPI(intent.getStringExtra(RestWebService.RESTURL_KEY), intent.getStringExtra(RestWebService.TOKEN_KEY));
 		} catch (IOException e) {
     		e.printStackTrace();
     		jsonMessage="NoData";
@@ -128,11 +130,11 @@ public class RestWebService extends IntentService {
     }
     
     // Does all the hard work in calling the remote API and returning the JSON response.
-	private String getRequestToAPI(String url) throws IOException {
+	private String getRequestToAPI(String url, String token) throws IOException {
 		String jsonMessage=null;
 		HttpClient httpclient = new DefaultHttpClient();
 		HttpGet httpGet=new HttpGet(url);
-	    httpGet.addHeader("Authorization", returnToken());
+	    httpGet.addHeader("Authorization", token);
 	    httpGet.addHeader("Accept",returnContentType());
 	    HttpResponse response = httpclient.execute(httpGet);
 	    StatusLine statusLine = response.getStatusLine();
@@ -150,9 +152,5 @@ public class RestWebService extends IntentService {
 	
 	private String returnContentType() {
 		return "application/json";
-	}
-	
-	private String returnToken() {
-	    return "Token token=92b1a8339d73d6cc1ef8aecee1c288d7";
 	}
 }
