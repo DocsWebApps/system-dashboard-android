@@ -64,14 +64,14 @@ public class SystemListActivity extends ListActivity {
 	
 	private String returnToken() {
 		//return "Token token="+StorageUtils.readFirstLineFromFile(this, AppSettingsActivity.TOKEN_FILE);
-		return "Token token=fbcdbe86dfbf8c24bde83b20c361be6e"; // Local Rails App
-        //return "Token token=467a6d763c591c15cb13042a105ca7b0"; // Heroku Online App
+		//return "Token token=fbcdbe86dfbf8c24bde83b20c361be6e"; // Local Rails App
+        return "Token token=467a6d763c591c15cb13042a105ca7b0"; // Heroku Online App
 	}
 	
 	private String restURL() {
 		//return StorageUtils.readFirstLineFromFile(this, AppSettingsActivity.WEB_SERVICE_FILE)+"/api/v2/systems";
-		return "http://10.0.2.2:3000/api/v2/systems"; //AVD External Host IP Address: 10.0.2.2
-        //return "http://system-dashboard.herokuapp.com/api/v2/systems"; //Online Heroku Application
+		//return "http://10.0.2.2:3000/api/v2/systems"; //AVD External Host IP Address: 10.0.2.2
+        return "http://system-dashboard.herokuapp.com/api/v2/systems"; //Online Heroku Application
 	}
 	
 	private void launchSystemListActivity(String jsonResponse) throws JSONException {
