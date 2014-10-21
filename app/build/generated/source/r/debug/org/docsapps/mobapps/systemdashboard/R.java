@@ -44,6 +44,7 @@ public final class R {
         public static final int pin4=0x7f06000d;
         public static final int remmember_msg=0x7f060014;
         public static final int system_image=0x7f060018;
+        public static final int system_message=0x7f06001a;
         public static final int system_name=0x7f060019;
         public static final int system_view=0x7f060017;
     }
@@ -61,21 +62,22 @@ public final class R {
         public static final int app_set_message=0x7f040001;
         public static final int app_set_token=0x7f040002;
         public static final int app_set_url=0x7f040003;
-        public static final int app_token_hint=0x7f040004;
-        public static final int app_url_hint=0x7f040005;
-        public static final int button_exit_message=0x7f040006;
-        public static final int button_save_message=0x7f040007;
-        public static final int first_time_message=0x7f040008;
-        public static final int footer_message=0x7f040009;
-        public static final int login_header=0x7f04000a;
-        public static final int login_msg=0x7f04000b;
-        public static final int login_title=0x7f04000c;
-        public static final int new_pin_message=0x7f04000d;
-        public static final int nointernet_image=0x7f04000e;
-        public static final int nointernet_message=0x7f04000f;
-        public static final int nointernet_warning=0x7f040010;
-        public static final int remmember_message=0x7f040011;
-        public static final int smiley=0x7f040012;
+        public static final int app_test_string=0x7f040004;
+        public static final int app_token_hint=0x7f040005;
+        public static final int app_url_hint=0x7f040006;
+        public static final int button_exit_message=0x7f040007;
+        public static final int button_save_message=0x7f040008;
+        public static final int first_time_message=0x7f040009;
+        public static final int footer_message=0x7f04000a;
+        public static final int login_header=0x7f04000b;
+        public static final int login_msg=0x7f04000c;
+        public static final int login_title=0x7f04000d;
+        public static final int new_pin_message=0x7f04000e;
+        public static final int nointernet_image=0x7f04000f;
+        public static final int nointernet_message=0x7f040010;
+        public static final int nointernet_warning=0x7f040011;
+        public static final int remmember_message=0x7f040012;
+        public static final int smiley=0x7f040013;
     }
     public static final class style {
         /** 

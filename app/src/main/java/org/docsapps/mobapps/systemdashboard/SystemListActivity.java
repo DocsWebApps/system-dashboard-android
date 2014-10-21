@@ -29,9 +29,8 @@ public class SystemListActivity extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		getListView().setFooterDividersEnabled(true);
-		TextView footerView = null;
 		LayoutInflater inflater=(LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		footerView=(TextView) inflater.inflate(R.layout.footer_view, null);
+		TextView footerView=(TextView) inflater.inflate(R.layout.footer_view, null);
 		getListView().addFooterView(footerView);
 		footerView.setOnClickListener(new OnClickListener() {
 			@Override
@@ -55,7 +54,7 @@ public class SystemListActivity extends ListActivity {
 	    	.setNegativeButton("No", null)
 	    	.show();
 	}
-	
+
 	private void fetchDataFromWebService() {
 		RestWebServiceHandler handler = new RestWebServiceHandler(this);
 		Intent intent=RestWebService.makeIntent(this, handler, restURL(), returnToken());
@@ -65,14 +64,14 @@ public class SystemListActivity extends ListActivity {
 	
 	private String returnToken() {
 		//return "Token token="+StorageUtils.readFirstLineFromFile(this, AppSettingsActivity.TOKEN_FILE);
-		//return "Token token=1b5fce7c56a22df78b4bd1e6ec21f75d"; // Local Rails App
-        return "Token token=467a6d763c591c15cb13042a105ca7b0"; // Heroku Online App
+		return "Token token=fbcdbe86dfbf8c24bde83b20c361be6e"; // Local Rails App
+        //return "Token token=467a6d763c591c15cb13042a105ca7b0"; // Heroku Online App
 	}
 	
 	private String restURL() {
 		//return StorageUtils.readFirstLineFromFile(this, AppSettingsActivity.WEB_SERVICE_FILE)+"/api/v2/systems";
-		//return "http://10.0.2.2:3000/api/v2/systems"; //AVD External Host IP Address: 10.0.2.2
-        return "http://system-dashboard.herokuapp.com/api/v2/systems"; //Online Heroku Application
+		return "http://10.0.2.2:3000/api/v2/systems"; //AVD External Host IP Address: 10.0.2.2
+        //return "http://system-dashboard.herokuapp.com/api/v2/systems"; //Online Heroku Application
 	}
 	
 	private void launchSystemListActivity(String jsonResponse) throws JSONException {
@@ -83,7 +82,7 @@ public class SystemListActivity extends ListActivity {
 	
 	private void processWebServiceResponse(Message msg) throws JSONException {
 		Bundle bundle=msg.getData();
-		String jsonResponse=(String) bundle.getString(RestWebService.JSON_KEY);
+		String jsonResponse=bundle.getString(RestWebService.JSON_KEY);
 		if (jsonResponse.equals("NoData")) {
 			onNoDataFound();
 		} else {

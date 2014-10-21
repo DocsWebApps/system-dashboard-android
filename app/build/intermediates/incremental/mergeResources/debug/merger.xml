@@ -36,6 +36,8 @@
                 </string>
                 <string name="login_title" >Welcome to the System Dashboard
                 </string>
+                <string name="app_test_string" >This is a test string...
+                </string>
                 <string name="footer_message" >Refresh Data
                 </string>
                 <string name="nointernet_warning" >Cannot connect to the Internet !

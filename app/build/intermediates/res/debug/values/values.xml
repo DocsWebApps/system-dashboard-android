@@ -8,6 +8,7 @@
     <string name="app_set_message">Required application settings</string>
     <string name="app_set_token">2. Please enter the 32 character authentication token below</string>
     <string name="app_set_url">1. Please enter the url of the dashboard webservice below</string>
+    <string name="app_test_string">This is a test string...</string>
     <string name="app_token_hint">eg. fA63be20aBB...</string>
     <string name="app_url_hint">eg. http://yourhostname.com</string>
     <string name="button_exit_message">Exit</string>

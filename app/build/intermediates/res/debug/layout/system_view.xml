@@ -3,23 +3,40 @@
     android:id="@+id/system_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     android:background="#FFFFFF"
     android:padding="3dp" >
 
     <ImageView
         android:id="@+id/system_image"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
-        android:layout_marginRight="10dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="5dp"
         android:gravity="center"
         android:contentDescription="@string/smiley"
         android:src="@drawable/green" />
 
-    <TextView
-        android:id="@+id/system_name"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:layout_weight="0.42"
-        android:textColor="#000000"
-        android:textSize="24sp" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/system_name"
+            android:layout_width="fill_parent"
+            android:layout_height="28dp"
+            android:layout_weight="0.42"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:text="@string/app_test_string" />
+
+        <TextView
+            android:id="@+id/system_message"
+            android:layout_below="@+id/system_name"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_weight="0.42"
+            android:textColor="#009900"
+            android:textSize="16sp"
+            android:text="@string/app_test_string" />
+    </RelativeLayout>
 </LinearLayout><!-- From: file:/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/layout/system_view.xml -->
