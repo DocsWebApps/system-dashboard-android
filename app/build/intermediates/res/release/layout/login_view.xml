@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#DDDDDD"
+    android:scaleType="centerCrop"
+    tools:context=".LoginActivity" >
+    
+    <TextView
+        android:id="@+id/login_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:background="#000000"
+        android:text="@string/login_header"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/login_title"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_header"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30sp"
+        android:background="@drawable/grey_rounded_corner"
+        android:gravity="center"
+        android:text="@string/login_title"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+    
+    <TextView
+        android:id="@+id/login_msg"
+        android:layout_below="@+id/login_title"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18sp"
+        android:layout_marginTop="18sp"
+        android:background="@drawable/grey_rounded_corner"
+        android:text="@string/login_msg"
+        android:textSize="20sp"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_msg"
+        android:layout_centerInParent="true"
+        android:visibility="visible" >
+        
+        <EditText
+	        android:id="@+id/pin1"
+	        android:layout_width="60sp"
+	        android:layout_height="60sp"
+	        android:background="@drawable/white_rounded_corner"
+	        android:ems="10"
+	        android:gravity="center"
+	        android:maxLength="1" 
+	       	android:inputType="numberPassword">
+	         <requestFocus />
+	    </EditText>
+
+        <EditText
+            android:id="@+id/pin2"
+            android:layout_marginLeft="5sp"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:background="@drawable/white_rounded_corner"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="numberPassword"
+            android:maxLength="1" >
+
+        </EditText>
+	
+	    <EditText
+	        android:id="@+id/pin3"
+	        android:layout_marginLeft="5sp"
+	        android:layout_width="60sp"
+	        android:layout_height="60sp"
+	        android:background="@drawable/white_rounded_corner"
+	        android:ems="10"
+	        android:gravity="center"
+	        android:maxLength="1" 
+	       	android:inputType="numberPassword">
+        </EditText>
+        	
+	    <EditText
+	        android:id="@+id/pin4"
+	        android:layout_marginLeft="5sp"
+	        android:layout_width="60sp"
+	        android:layout_height="60sp"
+	        android:background="@drawable/white_rounded_corner"
+	        android:ems="10"
+	        android:gravity="center"
+	        android:maxLength="1" 
+	       	android:inputType="numberPassword">
+	  	</EditText>
+    </LinearLayout>
+
+</RelativeLayout>
+<!-- From: file:/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/layout/login_view.xml -->

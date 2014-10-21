@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="21.0.0" >
+        <source path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/res" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res" >
+            <file
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/values-v11/styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/values/strings.xml"
+                qualifiers="" >
+                <string name="app_set_message" >Required application settings
+                </string>
+                <string name="button_save_message" >Save
+                </string>
+                <string name="login_header" >Log In
+                </string>
+                <string name="button_exit_message" >Exit
+                </string>
+                <string name="app_set_token" >2. Please enter the 32 character authentication token below
+                </string>
+                <string name="smiley" >System Status
+                </string>
+                <string name="app_url_hint" >eg. http://yourhostname.com
+                </string>
+                <string name="login_title" >Welcome to the System Dashboard
+                </string>
+                <string name="footer_message" >Refresh Data
+                </string>
+                <string name="nointernet_warning" >Cannot connect to the Internet !
+                </string>
+                <string name="remmember_message" >Please remmember your PIN !!
+                </string>
+                <string name="login_msg" >Please enter your 4-digit pin
+                </string>
+                <string name="new_pin_message" >Please enter your 4 digit pin and press save
+                </string>
+                <string name="nointernet_message" >The SystemDashboard requires a 3G or Wi-Fi connection to the Internet in order to operate
+                </string>
+                <string name="app_name" >SystemDashboard
+                </string>
+                <string name="first_time_message" >Pin code is invalid or not set !
+                </string>
+                <string name="app_set_url" >1. Please enter the url of the dashboard webservice below
+                </string>
+                <string name="app_token_hint" >eg. fA63be20aBB...
+                </string>
+                <string name="nointernet_image" >NoInternet Image
+                </string>
+            </file>
+            <file
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/values/styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+            </file>
+            <file
+                name="grey_rounded_corner"
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/drawable/grey_rounded_corner.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="amber"
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/drawable/amber.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="green"
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/drawable/green.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/drawable/ic_launcher.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="white_rounded_corner"
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/drawable/white_rounded_corner.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="nointernet"
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/drawable/nointernet.jpg"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="red"
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/drawable/red.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="main_view"
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/layout/main_view.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="app_settings_view"
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/layout/app_settings_view.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="login_view"
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/layout/login_view.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="system_view"
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/layout/system_view.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="footer_view"
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/layout/footer_view.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="nointernetconnection_view"
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/layout/nointernetconnection_view.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="pinentry_view"
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/layout/pinentry_view.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/main/res/values-v14/styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+        </source>
+        <source path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/build/generated/res/rs/release" />
+        <source path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/build/generated/res/generated/release" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/src/release/res" />
+    </dataSet>
+
+</merger>

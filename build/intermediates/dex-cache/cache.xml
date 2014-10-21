@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-4a057e0e6419b1de8f80f6c0ba4a04df6297e8bd.jar"
+        jar="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/libs/internal_impl-21.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0"/>
+    <item
+        dex="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-79ebfc477f0bfe09d23ea2648097b1281802f61a.jar"
+        jar="/opt/android-studio/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e"/>
+    <item
+        dex="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/build/intermediates/pre-dexed/debug/classes-09531da9ccfae24ba348fc32abe83343db2345b4.jar"
+        jar="/home/anddev/AndroidstudioProjects/system-dashboard-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6"/>
+
+</pre-dex-items>
